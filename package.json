@@ -1,36 +1,43 @@
 {
-  "name": "BabylonNext",
-  "version": "0.0.0",
+  "name": "babylonjs-nextjs",
+  "version": "0.0.1",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "repos/*"
-    ],
-    "nohoist": []
-  },
   "scripts": {
-    "dev": "yarn workspace web dev",
-    "web": "yarn workspace web dev",
-    "build": "yarn workspace web build",
-    "start": "yarn workspace web start",
-    "scan": "./node_modules/.bin/madge --circular repos --exclude 'node_modules/'",
-    "test": "yarn scan && jest",
-    "reset": "yarn clear && yarn cache clean && yarn",
-    "clear": "yarn delete yarn.lock node_modules repos/core/node_modules repos/web/node_modules",
-    "delete": "rimraf"
+    "start": "next dev",
+    "test": "karma start karma.config.js"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^5.0.0-beta",
+    "@babylonjs/gui": "^5.0.0-beta",
+    "@babylonjs/inspector": "^5.0.0-beta",
+    "@babylonjs/loaders": "^5.0.0-beta",
+    "@babylonjs/materials": "^5.0.0-beta",
+    "@babylonjs/post-processes": "^5.0.0-beta",
+    "@babylonjs/procedural-textures": "^5.0.0-beta",
+    "@babylonjs/serializers": "^5.0.0-beta",
+    "earcut": "2.2.3",
+    "next": "12.0.10",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "5.11.0",
-    "@testing-library/react": "10.4.3",
-    "babel-jest": "26.1.0",
-    "babel-plugin-import-graphql": "2.8.1",
-    "babel-plugin-lodash": "3.3.4",
-    "concurrently": "5.2.0",
-    "identity-obj-proxy": "3.0.0",
-    "jest": "26.1.0",
-    "jest-transform-graphql": "2.1.0",
-    "madge": "3.9.2",
-    "react-test-renderer": "16.13.1",
-    "rimraf": "3.0.2"
+    "@types/mocha": "9.1.0",
+    "@types/node": "17.0.18",
+    "@types/react": "17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "chai": "4.3.6",
+    "esbuild": "0.14.21",
+    "esbuild-loader": "2.18.0",
+    "expect.js": "0.3.1",
+    "karma": "^6.3.16",
+    "karma-chai": "0.1.0",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-mocha": "2.0.1",
+    "karma-webpack": "5.0.0",
+    "mocha": "^9.2.0",
+    "node-polyfill-webpack-plugin": "1.1.4",
+    "rimraf": "3.0.2",
+    "typescript": "4.5.5",
+    "webpack": "5.68.0"
   }
 }

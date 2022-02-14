@@ -1,3 +1,5 @@
+stuff below doesnt apply to this fork
+
 ## Babylon + Next.js Starter Template
 
 This is a production ready mono-repository setup for Babylon.js using Next.js server side rendering.
