@@ -1,4 +1,4 @@
-import NextLink from "next/link"
+import NextLink from "next/link";
 
 /**
  * Preload Script for given Route without rendering (only works in Next.js production)
@@ -11,11 +11,11 @@ export default function Preload({ to, ...props }) {
     <NextLink href={to} {...props}>
       <i style={style} />
     </NextLink>
-  )
+  );
 }
 
 const style = {
   position: "absolute",
   width: 0,
   height: 0
-}
+};
