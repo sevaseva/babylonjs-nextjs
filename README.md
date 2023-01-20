@@ -1,4 +1,4 @@
-A minimal one-page Next.js 12.x web app that uses Babylon.js 5.x to render a basic 3D scene.
+A minimal one-page Next.js 13.x web app that uses Babylon.js 5.x to render a basic 3D scene.
 
 ```shell
 git clone [URL] babylonjs-nextjs
