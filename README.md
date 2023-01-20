@@ -1,61 +1,18 @@
-stuff below doesnt apply to this fork
+A minimal one-page Next.js 12.x web app that uses Babylon.js 5.x to render a basic 3D scene.
 
-## Babylon + Next.js Starter Template
-
-This is a production ready mono-repository setup for Babylon.js using Next.js server side rendering.
-
-It is suitable for small projects, and scales to large apps without suffering performance or ease of use.
-
-For more details, please read this guide on how to optimize your 
-[Babylon + Next.js production build for SEO and Blazing Fast Page Load Speed](https://3designer.app/best/babylon-nextjs-setup).
-
-![ui](./repos/web/public/images/scene.jpg)
-
-
-### Key Features:
-
-1. SEO Friendly
-2. Load Fast to achieve “A” Grade Page Speed score
-3. Async Load Babylon.js to improve UX (user experience)
-4. Code Splitting with Tree Shaking to reduce bundle size
-5. An option to write in pure Javascript or Typescript (or mixing both)
-6. Intuitive developer experience with HMR (Hot Module Reload)
-7. [Jest Test](https://jestjs.io/) working setup
-8. Modular Architecture for a flexible, maintainable and scalable app
-9. Production ready with detailed bundle analyzer.
-
-
-### Installation & Use
-
-This is a platform-agnostic monorepository minimum setup boilerplate.
-
-It has been tested and works with Node.js v12.22.1.
-
-The setup uses [Yarn Workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/) to easily scale to different clients (React Native for iOS, Android, Electron) or server (Node.js).
-
-This way, you can maximize code reuse between platforms to enforce **best programming practices**.
-
-1. Install packages
 ```shell
-yarn
+git clone [URL] babylonjs-nextjs
+cd babylonjs-nextjs
+npm install
+npm run dev
 ```
 
-2. Run the app
-```shell
-yarn dev
-```
+Then open the app at http://localhost:3000/
 
-3. Run Tests
-```shell
-yarn test
-```
+The lightweight page first loads completely (making the crawlers, bots and page speed analyzer tools happy) _without_ fetching any Babylon.js code, heavy resources for the scene, without even the canvas element in the DOM. Then _immediately_ (using React.js useState() trick that is explained in detail in [index.js](src/pages/index.js)) re-renders - this time adding the [BabylonScene](src/components/BabylonScene.js) react component to the page: that adds the canvas node to the DOM, loads Babylon.js related code to the client, executes out Babylon scene setup (which makes the resources such as texture images,GLBs, etc get downloaded to the client).
 
-4. Build production bundle
-```shell
-yarn build
-```
+This is intended to demonstrate a resonable, clean way to render a Babylon.js scene in a Next.js app in the simplest possible way. Intentionally left out are nice things like pre-fetching, pre-loading, TypeScript, testing infrastructure, a recommended directory structure for a larger app, production/optimized build targets, demonstration of various useful Next.js, React.js features relevant for a WebGL heavy app, demonstration of useful libraries that aren't needed in this minimalist app.
 
-5. Run Production build locally
-```shell
-yarn start
-```
+For some of those things, consider reviewing
+* [Babylon + Next.js production build for SEO and Blazing Fast Page Load Speed](https://3designer.app/best/babylon-nextjs-setup) which this code is based on. It uses Next.js 10.x and `yarn` (rather than plain `npm`).
+* https://github.com/jeremy-coleman/babylon-next that uses `npm`, `karma with chrome instead of jest with jsdom` and Next.js 12.x
