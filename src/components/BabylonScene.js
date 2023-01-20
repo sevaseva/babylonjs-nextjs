@@ -27,7 +27,7 @@ export default class BabylonScene extends PureComponent {
     camera.radius = 3
     const light = new HemisphericLight("Light", new Vector3(0.33, 1, -0.67), scene)
     light.intensity = 0.9
-    const texture = new Texture(`/images/grid.png`, scene)
+    const texture = new Texture(`/images/texture.png`, scene)
     const mat = new StandardMaterial("Material", scene)
     mat.diffuseTexture = texture
     const box = new MeshBuilder.CreateBox("box", { size: 1 }, scene)
