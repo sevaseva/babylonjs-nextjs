@@ -12,9 +12,9 @@ import {
 import Head from "next/head"
 
 /**
- * Babylon 3D Scene View
+ * Babylon 3D Scene.
  */
-export default class SceneView extends PureComponent {
+export default class BabylonScene extends PureComponent {
   componentDidMount() {
     this.setup(this.canvas)
   }
