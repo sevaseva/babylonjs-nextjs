@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import dynamic from "next/dynamic"
 
 // Load SceneView component only on the client side.
-const SceneView = dynamic(() => import(`app/SceneView`), { ssr: false })
+const SceneView = dynamic(() => import(`components/SceneView`), { ssr: false })
 
 export default function HomePage(props) {
   const [loaded, setLoaded] = useState(false)
