@@ -9,7 +9,6 @@ import {
   Texture,
   Vector3
 } from "@babylonjs/core"
-import Head from "next/head"
 
 /**
  * Babylon 3D Scene.
@@ -49,10 +48,8 @@ export default class BabylonScene extends PureComponent {
   onMount = (canvas) => (this.canvas = canvas)
 
   render() {
-    // noinspection HtmlUnknownAttribute,HtmlRequiredTitleElement,JSUnresolvedLibraryURL
     return (
       <>
-        <Head children={<script src="https://code.jquery.com/pep/0.4.3/pep.min.js" />} />
         <canvas id={this.id} ref={this.onMount} style={style} />
       </>
     )
